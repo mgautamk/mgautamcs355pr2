@@ -2,16 +2,17 @@
 
 
 <% if(rs.length > 0) { %>
-<form method="post" action="/student/dropdown">
-    <label for="student_id">Students</label>
-    <select id="student_id" name="student_id">
+This example form submits without using ajax.  All of your forms should use Ajax.
+<form method="get" action="/student">
+    <label for="studentid">Students</label>
+    <select id="studentid" name="studentid">
         <% for (var i=0; rs.length > i; i++) { %>
         <option value="<%= rs[i].Student_number %>">
             <%= rs[i].Name %>
         </option>
         <% } %>
     </select>
-    This form does not submit for this lab.
+    <input type="submit">
 </form>
 <% } else { %>
 The table does not contain any records.
