@@ -19,6 +19,8 @@ exports.GetAll = function(callback) {
 }
 
 exports.GetAllView = function(callback) {
+    console.log("You must create the StudentsView MySQL VIEW for the sql statement below to work.");
+    // To create the StudentsView run the CREATE VIEW query below via the mysql client or mysql workbench.
     // CREATE VIEW StudentsView AS SELECT * FROM Students;
     connection.query('select Student_number, Name from StudentsView',
         function (err, result) {
