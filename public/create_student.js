@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('#createStudentBtn').click( function(){
+    $('#createStudentBtn').click( function(event){
         event.preventDefault();
         var payload = {
             name: $('#name').val(),
