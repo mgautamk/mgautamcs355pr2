@@ -1,5 +1,7 @@
 $(document).ready(function () {
     $('#studentid').change( function(){
+        
+        event.preventDefault();
 
         if($('#studentid').val() == "") {
             // the user selected the blank option, so hide the div and return
