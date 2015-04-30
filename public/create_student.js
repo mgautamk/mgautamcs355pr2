@@ -1,5 +1,6 @@
 $(document).ready(function () {
     $('#createStudentBtn').click( function(){
+        event.preventDefault();
         var payload = {
             name: $('#name').val(),
             major: $('#major').val(),
