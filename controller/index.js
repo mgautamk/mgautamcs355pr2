@@ -11,6 +11,12 @@ router.get('/hello', function(req, res){
     res.send('Hello, World!');
 });
 
+//More Information
+router.get('/moreinfo', function(req, res){
+    res.send('Here you can get more Information about Car Dealership DataBase');
+
+});
+
 /* Example 3: A simple template example */
 router.get('/template_example', function(req, res){
     // use render instead of send, to render a template instead of sending back a static file.

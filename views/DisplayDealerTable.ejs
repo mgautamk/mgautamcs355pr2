@@ -1,0 +1,19 @@
+<% include header %>
+<%console.log(rs)%>
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Dealer ID</th><th>Dealer Name</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/dealer/?DealerID=<%= rs[i].DealerID %>"> <%= rs[i].DealerID %></a></td>
+            <td><%= rs[i].DealerName %></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No MovieRatings are entered into the MovieRatting database table.
+    <% } %>
+</div>
+
+<% include footer %>

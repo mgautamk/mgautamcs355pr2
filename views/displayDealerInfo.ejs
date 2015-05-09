@@ -1,0 +1,10 @@
+<% include header %>
+
+<% if(rs.length > 0) { %>
+ID: <%= rs[0].DealerID %> <br />
+Name: <%= rs[0].DealerName %> <br />
+<% } else { %>
+No student matched this student id <%= dealerid %>.
+<% } %>
+
+<% include footer %>
