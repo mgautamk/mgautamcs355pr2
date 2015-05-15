@@ -1,14 +1,16 @@
+/**
+ * Created by mgautam on 5/9/2015.
+ */
 $(document).ready(function () {
-    $('#createStudentBtn').click( function(event){
+    $('#editDealerBtn').click( function(event){
         event.preventDefault();
         var payload = {
-            name: $('#name').val(),
-            major: $('#major').val(),
-            location: $('#location').val()
+            DealerID: $('#DealerID').val(),
+            DealerName: $('#DealerName').val()
         };
 
         $.ajax({
-            url: $("#create_user_form").attr("action"),
+            url: $("#edit_dealer_form").attr("action"),
             type: "POST",
             contentType: "application/json",
             processData: false,
@@ -21,3 +23,4 @@ $(document).ready(function () {
         });
     });
 });
+

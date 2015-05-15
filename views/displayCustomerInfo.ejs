@@ -1,0 +1,12 @@
+<% include header %>
+
+<% if(rs.length > 0) { %>
+ID: <%= rs[0].CustomerID %> <br />
+First Name: <%= rs[0].FirstName %> <br />
+Last Name: <%= rs[0].LastName %> <br />
+
+<% } else { %>
+No student matched this student id <%= CustomerID %>.
+<% } %>
+
+<% include footer %>

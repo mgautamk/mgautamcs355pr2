@@ -1,0 +1,7 @@
+<% if(rs.length > 0) { %>
+DealerID: <%= rs[0].DealerID %> <br />
+Dealer Name: <%= rs[0].DealerName %> <br />
+<% } else { %>
+No dealer matched this dealer id <%= dealerid %>.
+<% } %>
+

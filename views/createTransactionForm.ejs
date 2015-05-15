@@ -1,0 +1,32 @@
+<% // create a list of javascript files to have the header load %>
+<% var js_include = ['create_transaction.js']; %>
+<% include header %>
+
+<!-- Note that this is a post -->
+<form id="create_transaction_form" action="<%= action %>">
+    </br>
+    <% if(rsvehicle.length > 0) { %>
+    <label for="VehicleID">VehicleID</label>
+    <select id="VehicleID" name="VehicleIDID">
+        <% for (var i=0; rsvehicle.length > i; i++) { %>
+        <option value="<%= rsvehicle[i].VehicleID %>">
+            <%= rsvehicle[i].VehicleID  %>
+        </option><%}}%>
+    </select>
+    <label for="CustomerID">Customer Last Name</label>
+    <select id="CustomerID" name="CustomerID">
+        <% for (var i=0; rscustomer.length > i; i++) { %>
+        <option value="<%= rscustomer[i].CustomerID %>">
+            <%= rscustomer[i].LastName  %>
+        </option><%}%>
+    </select>
+    </br>
+
+    </select>
+</form>
+</br>
+<!-- note that we use a button here and not submit -->
+<input type="button" id="createTransactionBtn" value="Create" />
+<div id="output" style="margin:10px;display:none"></div>
+<% include footer %>
+

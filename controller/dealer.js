@@ -16,57 +16,96 @@ router.get('/all', function (req, res) {
 });
 
 
-/* View a single students information */
+/* View a single dealers information */
 router.get('/', function (req, res) {
-    if(req.query.DealerID == null) {
+    console.log(req.query.dealerid);
+    if(req.query.dealerid == null) {
         res.redirect('/dealer/all');
     }
     else {
         db.GetByDealerID(req.query.dealerid, function (err, result) {
                 if (err) throw err;
 
-                // Send result to the template along with the original student id in case there were no results
+                // Send result to the template along with the original dealer id in case there were no results
                 res.render('displayDealerInfo.ejs', {rs: result, dealerid: req.query.dealerid});
             }
         );
     }
 });
 
-// Create Student Form , to do convert to Dealer create
+// Create Dealer Form ,
 router.get('/create', function(req, res){
-    res.render('createStudentForm.ejs', {action: '/student/create'});
+    res.render('createDealerForm.ejs', {action: '/dealer/create'});
 });
 
-// Save Student information
+// Save Dealers information
 router.post('/create', function (req, res) {
-    db.Insert( req.body, function (err, result) {
+    console.log(req.body.dealerid);
+    db.DealerInsert( req.body, function (err, result) {
             if (err) {
                 throw err;
             }
             console.log(result);
 
             if(typeof result.insertId !== 'undefined') {
-                db.GetByID(result.insertId, function(err, result){
+                db.GetByDealerID(result.insertId, function(err, result){
 
-                    res.render('displayStudentInfoSnippet.ejs', {rs: result, studentid: result.insertId});
+                    res.render('displayDealerInfoSnippet.ejs', {rs: result, dealerid: result.insertId});
 
                 });
             }
             else {
-                res.send('Student was not inserted.');
+                res.send('Dealer was not inserted.');
             }
         }
     );
 });
 
-/* View all users in a drop down menu */
-router.get('/dropdown', function (req, res) {
-    db.GetAllView(function (err, result) {
-            if (err) throw err;
-            res.render('displayStudentDropDown.ejs', {rs: result});
+//EDIT
+// Create Dealer Edit Form ,
+router.get('/edit', function(req, res){
+    console.log(req.query.dealerid);
+    res.render('editDealerForm.ejs', {rs: res, action: '/dealer/edit'});
+});
+
+// Save Dealers information
+router.post('/edit/', function (req, res) {
+    console.log(req.body.dealerid);
+    db.DealerUpdate( req.body, function (err, result) {
+            if (err) {
+                throw err;
+            }
+            console.log(result);
+
+            if(typeof result.insertId !== 'undefined') {
+                db.GetByDealerID(result.insertId, function(err, result){
+
+                    res.render('displayDealerInfoSnippet.ejs', {rs: result, dealerid: result.insertId});
+
+                });
+            }
+            else {
+                res.send('Dealer was not updated');
+            }
         }
     );
 });
+
+
+//Delete
+router.get('/delete/', function (req, res) {
+    console.log(req.query.dealerid);
+    if(req.query.dealerid == null) {
+        res.redirect('/dealer/all');
+    }
+    else {
+        db.DealerDelete(req.query.dealerid, function (err, result) {
+            if (err) throw err;
+            res.redirect('/dealer/all');
+        });
+    }
+});
+
 
 module.exports = router;
 

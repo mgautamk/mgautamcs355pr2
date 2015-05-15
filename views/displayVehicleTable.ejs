@@ -1,0 +1,30 @@
+<% include header %>
+<%console.log(rs)%>
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th><!-- More Info Column --></th>
+            <th><!-- Delete Column --></th>
+        </tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><%= rs[i].Make %></td>
+            <td><%= rs[i].Model %></td>
+            <td><%= rs[i].YEAR %></td>
+            <td><a href="/vehicle/?VehicleID=<%= rs[i].VehicleID %>"> More Info</a></td>
+            <td><a href="/vehicle/delete?VehicleID=<%= rs[i].VehicleID %>">Delete</a></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No Vehicles are Entered into the Vehicles table.
+    <% } %>
+</div>
+<div style="margin-top:10px;">
+    <a href="/vehicle/create">Insert a Vehicle</a>
+</div>
+
+<% include footer %>

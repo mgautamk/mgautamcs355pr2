@@ -1,0 +1,31 @@
+<% // create a list of javascript files to have the header load %>
+<% var js_include = ['create_dealeraddress.js']; %>
+<% include header %>
+
+<!-- Note that this is a post -->
+<form id="create_dealeraddress_form" action="<%= action %>">
+    </br>
+    <% if(rsDealers.length > 0) { %>
+    <label for="DealerID">Dealer</label>
+    <select id="DealerID" name="DealerID">
+        <% for (var i=0; rsDealers.length > i; i++) { %>
+        <option value="<%= rsDealers[i].DealerID %>">
+            <%= rsDealers[i].DealerName  %>
+        </option><%}}%>
+    </select>
+</br>
+    </br>
+    <label for="City">City</label> <input type = text id="City" name="City">
+    </br></br>
+    <label for="State">State</label> <input type = text id="State" name="State">
+    </br></br>
+    <label for="Zip">Zip</label> <input type = text id="Zip" name="Zip">
+    </br></br>
+    </select>
+</form>
+</br>
+<!-- note that we use a button here and not submit -->
+<input type="button" id="createDealerAddressBtn" value="Create" />
+<div id="output" style="margin:10px;display:none"></div>
+<% include footer %>
+

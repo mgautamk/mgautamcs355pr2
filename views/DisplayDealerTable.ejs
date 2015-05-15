@@ -3,17 +3,25 @@
 <div>
     <% if(rs.length > 0) { %>
     <table border="1">
-        <tr><th>Dealer ID</th><th>Dealer Name</th></tr>
+        <tr><th>Dealer ID</th>
+            <th>Dealer Name</th>
+            <th><!-- Delete Column --></th>
+        </tr>
         <% for (var i=0; rs.length > i; i++) { %>
         <tr>
-            <td><a href="/dealer/?DealerID=<%= rs[i].DealerID %>"> <%= rs[i].DealerID %></a></td>
+            <td><a href="/dealer/?dealerid=<%= rs[i].DealerID %>"> <%= rs[i].DealerID %></a></td>
             <td><%= rs[i].DealerName %></td>
+            <td><a href="/dealer/delete?dealerid=<%= rs[i].DealerID %>"> Delete</a></td>
         </tr>
         <% } %>
     </table>
     <% } else { %>
-    No MovieRatings are entered into the MovieRatting database table.
+    No Dealer names are entered into Dealer database table.
     <% } %>
 </div>
+<div style="margin-top:10px;">
+        <a href="/dealer/create">Create a New Dealer</a>
+    </div>
 
 <% include footer %>
+

@@ -1,0 +1,14 @@
+<% if(rs.length > 0) { %>
+TransactionID: <%= rs[0].TransactionID %> <br />
+VehicleID: <%= rs[0].VehicleID %> <br />
+Make: <%= rs[0].Make %> <br />
+Model: <%= rs[0].Model %> <br />
+Year: <%= rs[0].YEAR %> <br />
+Price: <%= rs[0].PRICE %> <br />
+CustomerID: <%= rs[0].CustomerID %> <br />
+FirstName: <%= rs[0].FirstName %> <br />
+LastName: <%= rs[0].LastName %> <br />
+
+<% } else { %>
+No transaction matched this transaction id <%= TransactionID %>.
+<% } %>

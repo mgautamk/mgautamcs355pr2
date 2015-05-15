@@ -1,0 +1,40 @@
+<% include header %>
+<%console.log(rs)%>
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Transaction ID</th>
+            <th>Vehicle ID</th>
+            <th>Vehicle Make</th>
+            <th>Vehicle Model</th>
+            <th>Vehicle Year</th>
+            <th>Vehicle Price</th>
+            <th>Customer ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th><!-- Delete Column --></th>
+        </tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><%= rs[i].TransactionID %></td>
+            <td><%= rs[i].VehicleID %></td>
+            <td><%= rs[i].Make %></td>
+            <td><%= rs[i].Model %></td>
+            <td><%= rs[i].YEAR %></td>
+            <td><%= rs[i].PRICE %></td>
+            <td><%= rs[i].CustomerID %></td>
+            <td><%= rs[i].FirstName %></td>
+            <td><%= rs[i].LastName %></td>
+            <td><a href="/transaction/delete?TransactionID=<%= rs[i].TransactionID %>">Delete</a></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No Transactions are entered into the Transactions database table.
+    <% } %>
+</div>
+<div style="margin-top:10px;">
+    <a href="/transaction/create">Create new Transactions</a>
+</div>
+
+<% include footer %>

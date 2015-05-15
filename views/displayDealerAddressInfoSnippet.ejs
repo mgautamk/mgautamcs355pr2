@@ -1,0 +1,11 @@
+<% if(addressrs.length > 0) { %>
+DealerID: <%= addressrs[0].DealerID %> <br />
+City: <%= addressrs[0].City %> <br />
+State: <%= addressrs[0].State %> <br />
+Zip: <%= addressrs[0].Zip %> <br />
+
+<% } else { %>
+No dealer matched this dealer id <%= DealerID %>.
+<% } %>
+
+

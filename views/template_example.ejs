@@ -1,20 +1,29 @@
 <% include header %>
-
-<p>This is the same page as going to '/', except it uses an EJS template for the header and footer.</p>
+    <link href="style.css" rel="stylesheet" type="text/css">
 <ol>
-    <li>Example 1
-        <ol><li>Going to the domain:your_port/ sends a request to app.js</li>
-            <li>which routes the request to the router.get('/') function in controller/index.js</li>
-            <li>which returns the <strong>static</strong> index.html file to the user</li>
-        </ol>
-    </li>
-    <li><a href="/hello">Example 2</a> - /hello routes to index.js and sends back a <strong>plain text</strong> message</li>
-    <li><a href="/template_example">Example 3</a> - /template_example routes to index.js and sends back this home page, but using a template.</li>
-
-    <li><a href="/student/create">Example 4</a> - /student/create, routes requests to router.get('student/create') in controller/student.  An ajax form for creating a student is returned.</li>
-    <li><a href="/student/all">Example 5</a> - /student/all displays all users in a table</li>
-    <li><a href="/student/dropdown">Example 6</a> - /student/dropdown displays all student in a drop down menu</li>
-    <li><a href="/student/dropdown_ajax">Example 7</a> - /student/dropdown_ajax displays a student's information without reloading the page.</li>
+    <h1>Welcome to Mahese's Car Dealership Database</h1>
+        <li>
+            This Application that will allow users to look for Cars using Model, year, or feature they are looking for.
+        </li><li>
+            The Application will allow users to insert new Items, delete Items that are sold, and update Items price/features.
+        </li><li>
+            This Application will have different tables for storing Information. For Example: CarTable will store Cars
+        </li><li>
+            nformation (Make, model, year, etc), DealerTable will store information about the dealer.
+        </li>
+        </p>
+        <p>
+        <li>
+            This Application that will allow users to look for Dealers using City, State, Zip  they are looking for.
+        </li><li>
+            The Application will allow users to insert new Items, delete Items that are sold, and update Items price/features.
+        </li><li>
+            This Application will have different tables for storing Information. For Example: CarTable will store Cars
+        </li><li>
+            nformation (Make, model, year, etc), DealerTable will store information about the dealer.
+        </li>
+        </p>
+   <li></li>
 </ol>
 </body>
 

@@ -1,0 +1,31 @@
+<% include header %>
+<%console.log(rs)%>
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Dealer Name</th>
+            <th>City</th>
+            <th>State</th>
+            <th><!-- More Info Column --></th>
+            <th><!-- Delete Column --></th>
+        </tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><%= rs[i].DealerName %></td>
+            <td><%= rs[i].City %></td>
+            <td><%= rs[i].State %></td>
+            <td><a href="/dealeraddress/?DealerID=<%= rs[i].DealerID %>"> More Info</a></td>
+            <td><a href="/dealeraddress/delete?DealerID=<%= rs[i].DealerID %>">Delete</a></td>
+
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No MovieRatings are entered into the MovieRatting database table.
+    <% } %>
+</div>
+<div style="margin-top:10px;">
+    <a href="/dealeraddress/create">Create Address for a Dealer</a>
+</div>
+
+<% include footer %>

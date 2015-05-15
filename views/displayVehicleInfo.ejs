@@ -1,0 +1,13 @@
+<% include header %>
+
+<% if(rs.length > 0) { %>
+ID: <%= rs[0].VehicleID %> <br />
+Make: <%= rs[0].Make %> <br />
+Model: <%= rs[0].Model %> <br />
+Year: <%= rs[0].YEAR %> <br />
+Price: <%= rs[0].PRICE %> <br />
+<% } else { %>
+No student matched this student id <%= VehicleID %>.
+<% } %>
+
+<% include footer %>

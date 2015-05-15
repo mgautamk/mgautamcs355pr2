@@ -1,0 +1,17 @@
+<% // create a list of javascript files to have the header load %>
+<% var js_include = ['create_dealer.js']; %>
+<% include header %>
+<!-- Note that this is a post -->
+<form id="create_dealer_form" action="<%= action %>">
+    <table id="login">
+        <tr><td> DealerName:</td>
+            <td><input type="text" id="DealerName" name="DealerName" /></td>
+        </tr>
+    </table>
+    <!-- not that we use a button here and not submit -->
+    <input type="button" id="createDealerBtn" value="Create" />
+</form>
+
+<div id="output" style="margin:10px;display:none"></div>
+
+<% include footer %>

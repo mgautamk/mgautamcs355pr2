@@ -1,0 +1,28 @@
+<% include header %>
+<%console.log(rs)%>
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>First Name</th>
+            <th>Last Name</th>
+            <th><!-- More Info Column --></th>
+            <th><!-- Delete Column --></th>
+        </tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><%= rs[i].FirstName %></td>
+            <td><%= rs[i].LastName %></td>
+            <td><a href="/customer/?CustomerID=<%= rs[i].CustomerID %>"> More Info</a></td>
+            <td><a href="/customer/delete?CustomerID=<%= rs[i].CustomerID %>">Delete</a></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No Customers are Entered into the Customerss table.
+    <% } %>
+</div>
+<div style="margin-top:10px;">
+    <a href="/customer/create">Create new Customer</a>
+</div>
+
+<% include footer %>

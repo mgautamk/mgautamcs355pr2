@@ -1,0 +1,16 @@
+<% include header %>
+
+<% if(rstran.length > 0) { %>
+TransactionID: <%= rstran[0].TransactionID %> <br />
+VehicleID: <%= rstran[0].VehicleID %> <br />
+Make: <%= rstran[0].Make %> <br />
+Model: <%= rstran[0].Model %> <br />
+Year: <%= rstran[0].YEAR %> <br />
+Price: <%= rstran[0].PRICE %> <br />
+First Name: <%= rstran[0].FirstName %> <br />
+Last Name: <%= rstran[0].LastName %> <br />
+<% } else { %>
+No dealer matched this dealer id <%= TransactionID %>.
+<% } %>
+
+<% include footer %>

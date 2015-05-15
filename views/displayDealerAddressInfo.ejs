@@ -1,0 +1,13 @@
+<% include header %>
+
+<% if(rs.length > 0) { %>
+DealerID: <%= rs[0].DealerID %> <br />
+Name: <%= rs[0].DealerName %> <br />
+City: <%= rs[0].City %> <br />
+State: <%= rs[0].State %> <br />
+Zip: <%= rs[0].Zip %> <br />
+<% } else { %>
+No dealer matched this dealer id <%= dealerid %>.
+<% } %>
+
+<% include footer %>

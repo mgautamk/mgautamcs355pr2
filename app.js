@@ -5,8 +5,12 @@ var express = require('express'),
 
 // import routes
 var routes = require('./controller/index');
-var student_route  = require('./controller/student');
 var dealer_route = require('./controller/dealer');
+var dealeradd_route = require('./controller/dealeraddress');
+var vehicle_route  = require('./controller/vehicle');
+var customer_route  = require('./controller/customer');
+var transaction_route  = require('./controller/transaction');
+
 
 // initialize express web application framework
 // http://expressjs.com/
@@ -28,8 +32,11 @@ app.set('subtitle', 'Lab 18');
 
 //configure routes
 app.use('/', routes);
-app.use('/student', student_route);
 app.use('/dealer', dealer_route);
+app.use('/dealeraddress', dealeradd_route);
+app.use('/vehicle', vehicle_route);
+app.use('/customer', customer_route);
+app.use('/transaction', transaction_route);
 // configure static directory for javascript, css, etc.
 app.use(express.static('public'));
 

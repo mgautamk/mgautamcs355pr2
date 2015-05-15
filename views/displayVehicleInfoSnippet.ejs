@@ -1,0 +1,10 @@
+<% if(rs.length > 0) { %>
+Make: <%= rs[0].Make %> <br />
+Model: <%= rs[0].Model %> <br />
+YEAR: <%= rs[0].YEAR %> <br />
+PRICE: <%= rs[0].PRICE %> <br />
+<% } else { %>
+No vehicle matched this vehicle id <%= VehicleID %>.
+<% } %>
+
+
